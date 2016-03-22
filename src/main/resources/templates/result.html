@@ -2,11 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Getting Started: Handling Form Submission</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
+
+<style>
+h2{
+	text-align: center;
+}
+.container{
+	text-align: center;
+	background-color: #ECECEA;
+	margin-top: 50px;
+	padding-bottom: 300px;
+}
+body{
+	background-color: #3B3738;
+}
+</style>
+
 <body>
-	<h1>Result</h1>
-    <p th:text="${greeting.greetingContent} + ' ' + ${greeting.name}" />
-    <a href="/test">Submit another greeting</a>
+	<div class="container">
+		<h2>Result</h2>
+    	<p th:text="${greeting.greetingContent} + ' ' + ${greeting.name}" />
+    	<a class="btn btn-default" href="/test">Submit another greeting</a>
+	</div>
 </body>
 </html>

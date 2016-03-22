@@ -2,14 +2,48 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Getting Started: Handling Form Submission</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
+
+<style>
+h2{
+	text-align: center;
+}
+.container{
+	text-align: center;
+	background-color: #ECECEA;
+	margin-top: 50px;
+	padding-bottom: 300px;
+}
+body{
+	background-color: #3B3738;
+}
+</style>
+
 <body>
-	<h1>Form</h1>
-    <form action="#" th:action="@{/test}" th:object="${greeting}" method="post">
-    	<p>Greeting: <input type="text" th:field="*{greetingContent}" /></p>
-        <p>Name: <input type="text" th:field="*{name}" /></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form>
+
+	<div class="container col-md-offset-3 col-md-6">
+	    <h2>Enter Greeting Details</h2>
+	    <form class="form-horizontal" action="#" th:action="@{/test}" th:object="${greeting}" method="post">
+		    <div class="form-group">
+		        <label for="inputGreeting" class="control-label col-md-offset-2 col-md-2">Greeting</label>
+		    	<div class="col-md-4">
+		            <input type="text" class="form-control" id="inputGreeting" th:field="*{greetingContent}" />
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label for="inputName" class="control-label col-md-offset-2 col-md-2">Name</label>
+		    	<div class="col-md-4">
+		            <input type="text" class="form-control" id="inputName" th:field="*{name}" />
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <div class="col-md-offset-2 col-md-10">
+		        	<input class="btn btn-default" type="submit" value="Submit" /><input class="btn btn-default" type="reset" value="Reset" />
+		        </div>
+		    </div>
+	    </form>
+    </div>
 </body>
 </html>

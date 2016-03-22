@@ -40,4 +40,11 @@ public class Greeting {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return String.format(
+                "Greeting[id=%s, greetingContent='%s', name='%s']",
+                id, greetingContent, name);
+    }
+
 }
