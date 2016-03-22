@@ -2,21 +2,22 @@ package hello;
 
 public class Greeting {
 
-    private long id;
+    private final long id;
     private String greetingContent;
     private String name;
 
     public Greeting() {
+        this.id = 0;
     }
 
     public Greeting(long id) {
         this.id = id;
     }
 
-    public Greeting(long id, String name, String greetingContent) {
+    public Greeting(long id, String greetingContent, String name) {
         this.id = id;
-        this.name = name;
         this.greetingContent = greetingContent;
+        this.name = name;
     }
 
     public long getId() {
