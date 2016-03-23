@@ -2,6 +2,10 @@
 SnapTest is a small project to demonstrate knowledge of MVC, Spring and Java.
 
 ##Compile and Run
+This application requires mongodb to run. After installing mongodb, ensure it is running by using the following command.
+
+`mongod`
+
 To compile the application, clone the respoitory into a local directory and then run the below Gradle command to create a JAR file
 
 `gradle build`
@@ -14,18 +18,24 @@ Your application should now be running
 
 ##Usage
 
-The application currently has two pages.
+The application currently has one page and a RESTful API.
 
 ####Basic Page
 
 To visit the Greetings page go to [http://localhost:8080/test](http://localhost:8080/test)
 
-This page will allow you to enter a Greeting phrase and a Name. Upon clicking submit the application will combine the two phrases into a simple sentence and display the result.
+This page will allow you to enter a Greeting phrase and a Name. Upon clicking submit the application will combine the two phrases into a simple sentence and display the result. It will also add the result into the database.
 
-####REST
+####RESTful API
 
-To access the REST feature go to [http://localhost:8080/greeting](http://localhost:8080/greeting)
+The application has four ways to access data.
 
-Here a basic Hello World message will be returned as a JSON object. This message can also be customized to display a greeting to anyone.
+The first method is to get all greetings in the database. You can do this by navigating to [http://localhost:8080/greetings](http://localhost:8080/greetings)
 
-To change who is greeted go to http://localhost:8080/greeting?name=%Name% where %Name% is replaced by whichever name you like.
+Here all entries in the database for greetings will be returned as a JSON object.
+
+To get a single entry by Id navigate to http://localhost:8080/greetingbyid?id=%query%
+
+To get all entries for a certain name navigate to http://localhost:8080/greetingsbyname?name=%query%
+
+To get all entries for a certain greeting navigate to http://localhost:8080/greetingsbygreeting?greeting=%query%
