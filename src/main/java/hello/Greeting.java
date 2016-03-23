@@ -1,26 +1,26 @@
 package hello;
 
+import org.springframework.data.annotation.Id;
+
+
 public class Greeting {
 
-    private final long id;
+    @Id
+    private String id;
+
     private String greetingContent;
     private String name;
 
     public Greeting() {
-        this.id = 0;
     }
 
-    public Greeting(long id) {
-        this.id = id;
-    }
 
-    public Greeting(long id, String greetingContent, String name) {
-        this.id = id;
+    public Greeting(String greetingContent, String name) {
         this.greetingContent = greetingContent;
         this.name = name;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
